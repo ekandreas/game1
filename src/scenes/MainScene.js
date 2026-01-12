@@ -14,7 +14,7 @@ export class MainScene extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys()
 
     // Välkomsttext
-    this.add.text(400, 50, 'Mitt Första Spel!', {
+    this.add.text(400, 50, 'Ekens Testspel!', {
       fontSize: '32px',
       fill: '#ffffff',
       fontFamily: 'Arial'
