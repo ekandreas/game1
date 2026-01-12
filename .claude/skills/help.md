@@ -11,7 +11,7 @@ När användaren kör `/help` eller frågar om hjälp, visa följande informatio
 | Kommando | Beskrivning |
 |----------|-------------|
 | `/start` | Starta utvecklingsservern för att testa lokalt |
-| `/release` | Publicera spelet till internet |
+| `/lansera` | Publicera spelet till internet |
 | `/help` | Visa denna hjälp |
 
 ## Tips för att prata med Claude

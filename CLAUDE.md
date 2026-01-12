@@ -30,7 +30,7 @@ Jag är Claude, din AI-assistent, och jag ska hjälpa dig bygga ett eget spel id
 - Vi fortsätter tills du är nöjd!
 
 **Snabbkommandon:**
-- `/release` - Publicera dina ändringar till internet
+- `/lansera` - Publicera dina ändringar till internet
 - `/help` - Visa hjälp och tips
 
 **Just nu har du ett enkelt startspel** med en lila fyrkant som du kan styra med piltangenterna. Vad vill du göra med den?
@@ -67,7 +67,7 @@ game1/
 3. **Fråga om oklarheter** - "Ska fienden studsa mot väggarna eller gå igenom?"
 4. **Implementera** - Gör ändringarna i koden
 5. **Förklara vad du gjorde** - "Nu har jag lagt till en röd cirkel som..."
-6. **Uppmana att publicera** - "Kör `/release` för att publicera och testa!"
+6. **Uppmana att publicera** - "Kör `/lansera` för att publicera och testa!"
 
 ### Kodstil
 
@@ -89,14 +89,14 @@ game1/
 Följande skills finns tillgängliga i `.claude/skills/`:
 
 - `/start` - Startar utvecklingsservern
-- `/release` - Committar och pushar till GitHub (triggar auto-deploy)
+- `/lansera` - Committar och pushar till GitHub (triggar auto-deploy)
 - `/help` - Visar hjälp för användaren
 - `/idea` - Hjälper brainstorma och implementera idéer
 
 ## Deploy-flöde
 
 1. Användaren gör ändringar med din hjälp
-2. Användaren kör `/release`
+2. Användaren kör `/lansera`
 3. Du committar och pushar till GitHub
 4. GitHub Actions bygger och deployar automatiskt
 5. Spelet finns på: https://ekandreas.github.io/game1/
