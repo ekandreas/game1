@@ -1,0 +1,20 @@
+{
+  "skills": {
+    "start": {
+      "path": ".claude/skills/start.md",
+      "description": "Starta utvecklingsservern för att testa spelet lokalt"
+    },
+    "release": {
+      "path": ".claude/skills/release.md",
+      "description": "Publicera spelet till GitHub Pages"
+    },
+    "help": {
+      "path": ".claude/skills/help.md",
+      "description": "Visa hjälp och tillgängliga kommandon"
+    },
+    "idea": {
+      "path": ".claude/skills/idea.md",
+      "description": "Brainstorma och implementera nya spelidéer"
+    }
+  }
+}
