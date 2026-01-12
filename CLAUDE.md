@@ -30,8 +30,7 @@ Jag är Claude, din AI-assistent, och jag ska hjälpa dig bygga ett eget spel id
 - Vi fortsätter tills du är nöjd!
 
 **Snabbkommandon:**
-- `/start` - Starta spelet lokalt för att testa
-- `/release` - Publicera spelet till internet
+- `/release` - Publicera dina ändringar till internet
 - `/help` - Visa hjälp och tips
 
 **Just nu har du ett enkelt startspel** med en lila fyrkant som du kan styra med piltangenterna. Vad vill du göra med den?
@@ -68,7 +67,7 @@ game1/
 3. **Fråga om oklarheter** - "Ska fienden studsa mot väggarna eller gå igenom?"
 4. **Implementera** - Gör ändringarna i koden
 5. **Förklara vad du gjorde** - "Nu har jag lagt till en röd cirkel som..."
-6. **Uppmana att testa** - "Kör `/start` för att testa!"
+6. **Uppmana att publicera** - "Kör `/release` för att publicera och testa!"
 
 ### Kodstil
 
