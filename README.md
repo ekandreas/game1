@@ -1,61 +1,73 @@
-# Spelutveckling med AI
+# Bygg ett Mobilspel med AI
 
-Välkommen till workshopen där du ska bygga ett spel med hjälp av AI!
+Välkommen! I den här övningen ska du bygga ett eget mobilspel genom att prata med en AI-assistent. Du behöver **ingen programmeringserfarenhet** - AI:n skriver all kod åt dig!
 
-## Snabbstart
+## Ditt spel
 
-1. Öppna terminalen i denna mapp
-2. Skriv `claude` för att starta Claude Code
-3. Claude hälsar dig välkommen och guidar dig vidare!
+Skanna QR-koden för att öppna ditt spel på mobilen:
 
-## Kommandon i Claude Code
+![QR-kod till spelet](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://game1.leasify.app)
+
+**Direktlänk:** https://game1.leasify.app
+
+Spelet uppdateras automatiskt när AI:n gör ändringar i koden!
+
+## Så här gör du
+
+### 1. Starta Claude Code
+Öppna terminalen i denna mapp och skriv:
+```
+claude
+```
+
+### 2. Planera först! (Viktigt)
+Innan du börjar koda - **fundera på vad du vill bygga:**
+- Vad är spelidén? (t.ex. "undvik fiender", "samla poäng", "labyrint")
+- Hur ska det se ut?
+- Vad gör det roligt att spela?
+
+Berätta din idé för Claude så hjälper den dig planera!
+
+### 3. Bygg i små steg (iterera)
+Bygg spelet **lite i taget**:
+1. Börja med en enkel sak (t.ex. "lägg till en fiende")
+2. Testa att det funkar
+3. Lägg till nästa sak
+4. Upprepa!
+
+Små steg gör det lättare att följa med och fixa om något går fel.
+
+## Kommandon
 
 | Kommando | Vad det gör |
 |----------|-------------|
-| `/start` | Startar spelet lokalt så du kan testa |
-| `/release` | Publicerar spelet till internet |
-| `/help` | Visar hjälp och tips |
+| `/tips` | Visar slumpmässiga tips för spelutveckling |
+| `/hjälp` | Visar hjälp och vägledning |
 
-## Tips för bra prompter
+## Exempel på bra prompter
 
-**Var specifik:**
-- "Lägg till en fiende" (bra)
-- "Fixa spelet" (för vagt)
+**Specifikt är bättre:**
+- ✅ "Lägg till en röd fiende som studsar mot väggarna"
+- ❌ "Fixa spelet" (för vagt)
 
 **Ge exempel:**
-- "Jag vill ha en fiende som rör sig fram och tillbaka, som i gamla Mario-spel"
+- "Jag vill ha en fiende som rör sig fram och tillbaka, som i Pac-Man"
 
-**Steg för steg:**
-- Be om en sak i taget istället för allt på en gång
-
-## Ditt spel på internet
-
-När du kör `/release` publiceras spelet automatiskt till:
-
-**https://ekandreas.github.io/game1/**
-
-Skanna QR-koden i `docs/qr-code.png` för att öppna på mobilen!
+**Ett steg i taget:**
+- Först: "Lägg till en fiende"
+- Sen: "Gör så fienden rör sig"
+- Sen: "Lägg till poäng när jag undviker fienden"
 
 ## Felsökning
 
-**Spelet startar inte?**
-- Kör `/start` igen
-- Kolla att du är i rätt mapp
+**Spelet visar fel?**
+- Ladda om sidan (svep ner på mobilen eller tryck F5)
+- Rensa cache (Ctrl+Shift+R)
 
-**Ändringar syns inte på internet?**
-- Vänta 1-2 minuter efter `/release`
-- Rensa webbläsarens cache (Ctrl+Shift+R)
+**Något gick sönder?**
+- Berätta för Claude vad som hände
+- Claude kan fixa det!
 
-## Projektstruktur (för den nyfikne)
+---
 
-```
-game1/
-├── src/                 # Spelets kod
-│   ├── main.js         # Startar spelet
-│   └── scenes/         # Spelscener
-├── public/assets/      # Bilder och ljud
-├── index.html          # Webbsidan
-└── CLAUDE.md           # Instruktioner för AI:n
-```
-
-Lycka till och ha kul!
+**Lycka till och ha kul med ditt spel!**

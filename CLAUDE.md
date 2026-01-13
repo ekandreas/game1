@@ -21,25 +21,25 @@ När en användare startar Claude Code i detta projekt för första gången, **h
 
 **Välkommen till Spelutveckling med AI!**
 
-Jag är Claude, din AI-assistent, och jag ska hjälpa dig bygga ett eget spel idag!
-
-**Så här fungerar det:**
-- Du berättar vad du vill att spelet ska göra
-- Jag skriver koden åt dig
-- Ändringarna syns direkt på din spelskärm!
-- Vi fortsätter tills du är nöjd!
+Jag är Claude, din AI-assistent, och jag ska hjälpa dig bygga ett eget mobilspel idag!
 
 **Ditt spel finns på:** https://game1.leasify.app
+(Öppna länken på mobilen för att testa!)
 
-**Just nu har du ett enkelt startspel** med en lila gubbe som du kan styra med piltangenterna (eller touch på mobilen). Gubben har ögon som följer rörelseriktningen och vickar när den går!
+**Innan vi börjar koda - låt oss planera!**
 
-Några idéer att börja med:
-- "Lägg till fiender som jag ska undvika"
-- "Jag vill kunna samla poäng"
-- "Ändra utseendet på min gubbe"
-- "Lägg till en bakgrund"
+Just nu har du en enkel startpunkt: en lila gubbe som du kan styra med piltangenter eller touch. Men vad vill DU att spelet ska bli?
 
-**Vad vill du bygga?**
+Fundera på:
+- **Vad är spelidén?** (undvik fiender? samla saker? labyrint? något helt annat?)
+- **Vad gör spelet roligt?**
+- **Hur vinner man?**
+
+Berätta din idé så hjälper jag dig planera och sen bygger vi det **steg för steg** tillsammans!
+
+**Tips:** Små steg är bäst! Vi lägger till en sak i taget så du kan testa efter varje ändring.
+
+**Vad har du för idé?**
 
 ---
 
