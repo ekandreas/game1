@@ -14,22 +14,20 @@ export class MainScene extends Phaser.Scene {
   }
 
   create() {
-    // Skapa animationer för spelaren
-    // Spritesheet layout: 24 kolumner, 8 rader
-    // Rad 0: front idle, Rad 1: front walk
-    // Rad 2: back idle, Rad 3: back walk
-    // Rad 4: left idle, Rad 5: left walk
-    // Rad 6: right idle, Rad 7: right walk
-    // Vi använder karaktär i kolumn 3 (brunt hår)
+    // Spritesheet: 24 kolumner, 16 rader, 16x16 px
+    // Testar olika rad-kombinationer för att hitta rätt riktningar
 
     const cols = 24
-    const char = 5 // Karaktär nummer (kolumn) - man med brunt hår
+    const char = 4 // Karaktär kolumn
+
+    // Baserat på visuell inspektion - rad 0 verkar vara sidan
+    // Provar: rad 0-1=left, 2-3=right, 4-5=back, 6-7=front
 
     this.anims.create({
       key: 'walk-down',
       frames: [
-        { key: 'player', frame: 0 * cols + char },
-        { key: 'player', frame: 1 * cols + char }
+        { key: 'player', frame: 6 * cols + char },
+        { key: 'player', frame: 7 * cols + char }
       ],
       frameRate: 8,
       repeat: -1
@@ -37,16 +35,6 @@ export class MainScene extends Phaser.Scene {
 
     this.anims.create({
       key: 'walk-up',
-      frames: [
-        { key: 'player', frame: 2 * cols + char },
-        { key: 'player', frame: 3 * cols + char }
-      ],
-      frameRate: 8,
-      repeat: -1
-    })
-
-    this.anims.create({
-      key: 'walk-left',
       frames: [
         { key: 'player', frame: 4 * cols + char },
         { key: 'player', frame: 5 * cols + char }
@@ -56,17 +44,27 @@ export class MainScene extends Phaser.Scene {
     })
 
     this.anims.create({
-      key: 'walk-right',
+      key: 'walk-left',
       frames: [
-        { key: 'player', frame: 6 * cols + char },
-        { key: 'player', frame: 7 * cols + char }
+        { key: 'player', frame: 0 * cols + char },
+        { key: 'player', frame: 1 * cols + char }
       ],
       frameRate: 8,
       repeat: -1
     })
 
-    // Skapa spelaren (skalad upp för mobilskärm)
-    this.player = this.add.sprite(195, 330, 'player', 0 * cols + char)
+    this.anims.create({
+      key: 'walk-right',
+      frames: [
+        { key: 'player', frame: 2 * cols + char },
+        { key: 'player', frame: 3 * cols + char }
+      ],
+      frameRate: 8,
+      repeat: -1
+    })
+
+    // Skapa spelaren (skalad upp för mobilskärm) - börja med front-facing (rad 6)
+    this.player = this.add.sprite(195, 330, 'player', 6 * cols + char)
     this.player.setScale(3) // Gör gubben större
     this.cols = cols
     this.char = char
@@ -163,7 +161,7 @@ export class MainScene extends Phaser.Scene {
     } else {
       this.player.anims.stop()
       // Visa stillastående frame i rätt riktning
-      const rowMap = { down: 0, up: 2, left: 4, right: 6 }
+      const rowMap = { down: 6, up: 4, left: 0, right: 2 }
       this.player.setFrame(rowMap[this.lastDirection] * this.cols + this.char)
     }
   }
