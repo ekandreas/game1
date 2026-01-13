@@ -55,14 +55,34 @@ Så fort det blir en naturlig paus i arbetet (efter en implementation är klar, 
 
 ## VIKTIGT: Verifiera innan push
 
-**INNAN du pushar kod till develop, kör ALLTID:**
+**INNAN du pushar kod till develop, gör ALLTID följande:**
+
+### 1. Bygg projektet
 ```bash
 npm run build
 ```
+Om bygget misslyckas, fixa felen innan du går vidare.
 
-Detta säkerställer att koden kompilerar utan fel. Om bygget misslyckas, fixa felen innan du pushar. Pusha ALDRIG kod som inte bygger - det kommer krascha spelet för användaren!
+### 2. Testa att spelet startar
+```bash
+npm run dev
+```
+Öppna http://localhost:3000 (eller den port som visas) och verifiera:
+- Att sidan laddar utan fel
+- Att inga JavaScript-fel visas i webbläsarens konsol (F12 → Console)
+- Att spelet fungerar som förväntat
 
-Om du lägger till externa filer (bilder, ljud etc.), verifiera att de faktiskt laddades ner korrekt och har rätt format innan du använder dem i koden.
+### 3. Först därefter - pusha
+```bash
+git add -A && git commit -m "Beskrivning" && git push origin develop
+```
+
+**Pusha ALDRIG kod som:**
+- Inte bygger
+- Ger JavaScript-fel i konsolen
+- Kraschar när sidan laddas
+
+Om du lägger till externa filer (bilder, ljud etc.), verifiera att de faktiskt laddades ner korrekt och har rätt format innan du använder dem i koden. Kolla filstorleken och använd `file`-kommandot för att verifiera filtypen.
 
 ## Projektstruktur
 
