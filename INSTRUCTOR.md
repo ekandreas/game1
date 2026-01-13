@@ -89,15 +89,42 @@ Demonstrera röststyrningen:
 - "Det blev fel!" → Berätta för Claude vad som gick fel
 - "Jag vet inte vad jag ska göra" → Föreslå: fiender, poäng, power-ups
 
-## Schema-förslag
+## Schema (2 timmar)
 
 | Tid | Aktivitet |
 |-----|-----------|
-| 00:00 | Introduktion och demo |
-| 00:15 | Deltagarna börjar bygga |
-| 00:45 | Kort paus, visa varandras spel |
-| 01:00 | Fortsätt bygga |
-| 01:30 | Avslutning, visa upp spelen |
+| 00:00 | Introduktion och demo av Monologue |
+| 00:15 | **Fas 1:** Lugn start - deltagarna planerar och börjar bygga |
+| 00:45 | **Spion-momentet aktiveras!** (se nedan) |
+| 01:00 | Kort paus, snabbvisning |
+| 01:15 | **Fas 2:** Fortsätt bygga med konkurrens |
+| 01:45 | Avslutning, visa upp spelen för varandra |
+| 02:00 | Slut |
+
+*Dagen efter: Reflektion över promptning och hur det kan användas i arbetet.*
+
+## Spion-momentet (efter ca 30 min)
+
+När deltagarna har kommit igång och börjat få något på skärmen, introducera lite **stressfaktor**:
+
+> "Nu har ni jobbat ett tag och börjat få grepp om det här. Men visste ni att ni kan **spionera på varandra**? Alla era spel är live just nu!"
+
+**Deltagarnas spel-URLer:**
+- https://game2.leasify.app
+- https://game3.leasify.app
+- https://game4.leasify.app
+- https://game5.leasify.app
+
+**Säg något i stil med:**
+> "Vill ni se hur det går för de andra? Öppna deras URL på mobilen! Och kom ihåg - de kan se ert spel också..."
+
+**Syftet:**
+- Skapar lite tävlingskänsla
+- Inspirerar genom att se andras idéer
+- Gör det roligare och mer socialt
+- Motiverar att fortsätta bygga
+
+**VIKTIGT:** Vänta minst 30 minuter innan du introducerar detta! Deltagarna behöver lugn och ro att komma igång först.
 
 ## Felsökning
 
