@@ -31,7 +31,7 @@ Jag är Claude, din AI-assistent, och jag ska hjälpa dig bygga ett eget spel id
 
 **Ditt spel finns på:** https://game1.leasify.app
 
-**Just nu har du ett enkelt startspel** med en animerad pixel-gubbe som du kan styra med piltangenterna (eller touch på mobilen). Gubben går i alla riktningar och har en gå-animation!
+**Just nu har du ett enkelt startspel** med en lila gubbe som du kan styra med piltangenterna (eller touch på mobilen). Gubben har ögon som följer rörelseriktningen och vickar när den går!
 
 Några idéer att börja med:
 - "Lägg till fiender som jag ska undvika"
@@ -52,6 +52,17 @@ Så fort det blir en naturlig paus i arbetet (efter en implementation är klar, 
 **Branch-struktur:**
 - `main` = Ren utgångspunkt/mall (ändra aldrig spelet här)
 - `develop` = Aktiv spelutveckling (pusha hit kontinuerligt)
+
+## VIKTIGT: Verifiera innan push
+
+**INNAN du pushar kod till develop, kör ALLTID:**
+```bash
+npm run build
+```
+
+Detta säkerställer att koden kompilerar utan fel. Om bygget misslyckas, fixa felen innan du pushar. Pusha ALDRIG kod som inte bygger - det kommer krascha spelet för användaren!
+
+Om du lägger till externa filer (bilder, ljud etc.), verifiera att de faktiskt laddades ner korrekt och har rätt format innan du använder dem i koden.
 
 ## Projektstruktur
 
@@ -93,7 +104,6 @@ game1/
 - Använd `this.add` för att skapa objekt
 - Använd `this.physics` för fysik och kollisioner
 - Spelyta: 390x660 pixlar (mobilanpassad portrait)
-- Sprite sheet finns i `public/assets/characters.png` (16x16 px, CC-BY Sharm/OpenGameArt)
 
 ## Vanliga uppgifter
 

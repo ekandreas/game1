@@ -5,16 +5,7 @@ export class MainScene extends Phaser.Scene {
     super('MainScene')
   }
 
-  preload() {
-    // Ladda fotsteg-ljud
-    this.load.audio('step', 'assets/step.ogg')
-  }
-
   create() {
-    // Skapa enkel ljudeffekt för fotsteg
-    this.stepSound = this.sound.add('step', { volume: 0.3 })
-    this.lastStepTime = 0
-
     // Skapa en enkel gubbe med grafik
     this.player = this.add.container(195, 330)
 
@@ -117,12 +108,6 @@ export class MainScene extends Phaser.Scene {
       // Vicka gubben
       this.walkTimer += 0.3
       this.player.rotation = Math.sin(this.walkTimer) * 0.1
-
-      // Spela fotsteg-ljud med jämna mellanrum
-      if (time - this.lastStepTime > 250) {
-        this.stepSound.play()
-        this.lastStepTime = time
-      }
 
       // Flytta pupillerna i rörelseriktningen
       const pupilOffsetX = (velocityX / speed) * 2
