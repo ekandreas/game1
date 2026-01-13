@@ -29,7 +29,11 @@ För varje deltagarplats, förbered:
 
 3. **QR-kort**
    - Skriv ut QR-kod för varje deltagares spel-URL
-   - Varje deltagare får sitt unika kort (game1, game2, etc.)
+   - Varje deltagare får sitt unika kort (game2, game3, game4, game5)
+
+4. **Inspirationskort**
+   - Skriv ut kort med idéer och utmaningar (se sektion nedan)
+   - Ha en hög redo att dela ut vid pausen
 
 ### Checklista per plats
 
@@ -96,8 +100,8 @@ Demonstrera röststyrningen:
 | 00:00 | Introduktion och demo av Monologue |
 | 00:15 | **Fas 1:** Lugn start - deltagarna planerar och börjar bygga |
 | 00:45 | **Spion-momentet aktiveras!** (se nedan) |
-| 01:00 | Kort paus, snabbvisning |
-| 01:15 | **Fas 2:** Fortsätt bygga med konkurrens |
+| 01:00 | Kort paus + **Dela ut inspirationskort** (se nedan) |
+| 01:15 | **Fas 2:** Fortsätt bygga med nya idéer och konkurrens |
 | 01:45 | Avslutning, visa upp spelen för varandra |
 | 02:00 | Slut |
 
@@ -125,6 +129,40 @@ När deltagarna har kommit igång och börjat få något på skärmen, introduce
 - Motiverar att fortsätta bygga
 
 **VIKTIGT:** Vänta minst 30 minuter innan du introducerar detta! Deltagarna behöver lugn och ro att komma igång först.
+
+## Inspirationskort (vid pausen ~01:00)
+
+Vid pausen, dela ut **inspirationskort** med tips och idéer. Detta sätter fart på nya iterationer!
+
+**Förbered kort med förslag som:**
+
+*Gameplay-idéer:*
+- "Lägg till en power-up som gör dig odödlig i 5 sekunder"
+- "Skapa en tidsgräns - hinner du samla alla poäng?"
+- "Lägg till en boss-fiende som är extra svår"
+- "Gör så fienderna blir snabbare ju längre man spelar"
+- "Lägg till flera liv"
+
+*Visuella idéer:*
+- "Byt bakgrundsfärg när man får poäng"
+- "Lägg till en explosion-effekt vid kollision"
+- "Gör spelaren större för varje poäng"
+- "Lägg till en partikeleffekt när man rör sig"
+
+*Ljud-idéer:*
+- "Lägg till ett ljud när man får poäng"
+- "Spela ett ljud när spelet tar slut"
+- "Lägg till bakgrundsmusik"
+
+*Utmaningar:*
+- "Lägg till hinder som man måste undvika"
+- "Skapa en labyrint"
+- "Lägg till en andraspelare (tvåspelarläge)"
+
+**Säg något som:**
+> "Här är lite inspiration om ni kört fast eller vill ta ert spel till nästa nivå! Ta ett kort och utmana er själva!"
+
+**Tips:** Låt deltagarna välja kort själva - det skapar ägarskap över idén.
 
 ## Felsökning
 
