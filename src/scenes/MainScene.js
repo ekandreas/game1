@@ -5,70 +5,29 @@ export class MainScene extends Phaser.Scene {
     super('MainScene')
   }
 
-  preload() {
-    // Ladda karaktärs-spritesheet (16x16 pixlar per frame)
-    this.load.spritesheet('player', 'assets/characters.png', {
-      frameWidth: 16,
-      frameHeight: 16
-    })
-  }
-
   create() {
-    // Spritesheet: 24 kolumner, 16 rader, 16x16 px
-    // Testar olika rad-kombinationer för att hitta rätt riktningar
+    // Skapa en enkel gubbe med grafik
+    this.player = this.add.container(195, 330)
 
-    const cols = 24
-    const char = 4 // Karaktär kolumn
+    // Kropp (rektangel)
+    const body = this.add.rectangle(0, 8, 30, 36, 0x6366f1)
 
-    // Baserat på visuell inspektion - rad 0 verkar vara sidan
-    // Provar: rad 0-1=left, 2-3=right, 4-5=back, 6-7=front
+    // Huvud (cirkel)
+    const head = this.add.circle(0, -14, 18, 0x6366f1)
 
-    this.anims.create({
-      key: 'walk-down',
-      frames: [
-        { key: 'player', frame: 6 * cols + char },
-        { key: 'player', frame: 7 * cols + char }
-      ],
-      frameRate: 8,
-      repeat: -1
-    })
+    // Ögon
+    this.leftEye = this.add.circle(-6, -16, 4, 0xffffff)
+    this.rightEye = this.add.circle(6, -16, 4, 0xffffff)
+    this.leftPupil = this.add.circle(-6, -16, 2, 0x000000)
+    this.rightPupil = this.add.circle(6, -16, 2, 0x000000)
 
-    this.anims.create({
-      key: 'walk-up',
-      frames: [
-        { key: 'player', frame: 4 * cols + char },
-        { key: 'player', frame: 5 * cols + char }
-      ],
-      frameRate: 8,
-      repeat: -1
-    })
+    // Lägg till alla delar i containern
+    this.player.add([body, head, this.leftEye, this.rightEye, this.leftPupil, this.rightPupil])
 
-    this.anims.create({
-      key: 'walk-left',
-      frames: [
-        { key: 'player', frame: 0 * cols + char },
-        { key: 'player', frame: 1 * cols + char }
-      ],
-      frameRate: 8,
-      repeat: -1
-    })
-
-    this.anims.create({
-      key: 'walk-right',
-      frames: [
-        { key: 'player', frame: 2 * cols + char },
-        { key: 'player', frame: 3 * cols + char }
-      ],
-      frameRate: 8,
-      repeat: -1
-    })
-
-    // Skapa spelaren (skalad upp för mobilskärm) - börja med front-facing (rad 6)
-    this.player = this.add.sprite(195, 330, 'player', 6 * cols + char)
-    this.player.setScale(3) // Gör gubben större
-    this.cols = cols
-    this.char = char
+    // Lägg till fysik
     this.physics.add.existing(this.player)
+    this.player.body.setSize(30, 50)
+    this.player.body.setOffset(-15, -25)
     this.player.body.setCollideWorldBounds(true)
 
     // Lägg till tangentbordskontroller
@@ -101,11 +60,11 @@ export class MainScene extends Phaser.Scene {
       fontFamily: 'Arial'
     }).setOrigin(0.5)
 
-    // Håll koll på rörelseriktning
-    this.lastDirection = 'down'
+    // Animation-timer för att "vicka" gubben
+    this.walkTimer = 0
   }
 
-  update() {
+  update(time) {
     const speed = 150
     let velocityX = 0
     let velocityY = 0
@@ -121,48 +80,45 @@ export class MainScene extends Phaser.Scene {
         velocityX = (dx / distance) * speed
         velocityY = (dy / distance) * speed
         isMoving = true
-
-        // Bestäm riktning baserat på största rörelsen
-        if (Math.abs(dx) > Math.abs(dy)) {
-          this.lastDirection = dx > 0 ? 'right' : 'left'
-        } else {
-          this.lastDirection = dy > 0 ? 'down' : 'up'
-        }
       }
     }
 
     // Tangentbordsstyrning (överskrider touch)
     if (this.cursors.left.isDown) {
       velocityX = -speed
-      this.lastDirection = 'left'
       isMoving = true
     } else if (this.cursors.right.isDown) {
       velocityX = speed
-      this.lastDirection = 'right'
       isMoving = true
     }
 
     if (this.cursors.up.isDown) {
       velocityY = -speed
-      this.lastDirection = 'up'
       isMoving = true
     } else if (this.cursors.down.isDown) {
       velocityY = speed
-      this.lastDirection = 'down'
       isMoving = true
     }
 
     // Sätt hastighet
     this.player.body.setVelocity(velocityX, velocityY)
 
-    // Spela animation baserat på rörelse
+    // Animera gubben när den rör sig
     if (isMoving) {
-      this.player.anims.play('walk-' + this.lastDirection, true)
+      // Vicka gubben
+      this.walkTimer += 0.3
+      this.player.rotation = Math.sin(this.walkTimer) * 0.1
+
+      // Flytta pupillerna i rörelseriktningen
+      const pupilOffsetX = (velocityX / speed) * 2
+      const pupilOffsetY = (velocityY / speed) * 2
+      this.leftPupil.setPosition(-6 + pupilOffsetX, -16 + pupilOffsetY)
+      this.rightPupil.setPosition(6 + pupilOffsetX, -16 + pupilOffsetY)
     } else {
-      this.player.anims.stop()
-      // Visa stillastående frame i rätt riktning
-      const rowMap = { down: 6, up: 4, left: 0, right: 2 }
-      this.player.setFrame(rowMap[this.lastDirection] * this.cols + this.char)
+      // Stå still
+      this.player.rotation = 0
+      this.leftPupil.setPosition(-6, -16)
+      this.rightPupil.setPosition(6, -16)
     }
   }
 }
