@@ -23,7 +23,7 @@ export class MainScene extends Phaser.Scene {
     // Vi använder karaktär i kolumn 3 (brunt hår)
 
     const cols = 24
-    const char = 3 // Karaktär nummer (kolumn)
+    const char = 5 // Karaktär nummer (kolumn) - man med brunt hår
 
     this.anims.create({
       key: 'walk-down',
