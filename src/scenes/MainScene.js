@@ -15,40 +15,61 @@ export class MainScene extends Phaser.Scene {
 
   create() {
     // Skapa animationer för spelaren
-    // Spritesheet layout: varje rad är en karaktär, 2 frames per riktning
-    // Frame 0-1: ner, 2-3: upp, 4-5: vänster, 6-7: höger
+    // Spritesheet layout: 24 kolumner, 8 rader
+    // Rad 0: front idle, Rad 1: front walk
+    // Rad 2: back idle, Rad 3: back walk
+    // Rad 4: left idle, Rad 5: left walk
+    // Rad 6: right idle, Rad 7: right walk
+    // Vi använder karaktär i kolumn 3 (brunt hår)
+
+    const cols = 24
+    const char = 3 // Karaktär nummer (kolumn)
 
     this.anims.create({
       key: 'walk-down',
-      frames: this.anims.generateFrameNumbers('player', { start: 0, end: 1 }),
+      frames: [
+        { key: 'player', frame: 0 * cols + char },
+        { key: 'player', frame: 1 * cols + char }
+      ],
       frameRate: 8,
       repeat: -1
     })
 
     this.anims.create({
       key: 'walk-up',
-      frames: this.anims.generateFrameNumbers('player', { start: 2, end: 3 }),
+      frames: [
+        { key: 'player', frame: 2 * cols + char },
+        { key: 'player', frame: 3 * cols + char }
+      ],
       frameRate: 8,
       repeat: -1
     })
 
     this.anims.create({
       key: 'walk-left',
-      frames: this.anims.generateFrameNumbers('player', { start: 4, end: 5 }),
+      frames: [
+        { key: 'player', frame: 4 * cols + char },
+        { key: 'player', frame: 5 * cols + char }
+      ],
       frameRate: 8,
       repeat: -1
     })
 
     this.anims.create({
       key: 'walk-right',
-      frames: this.anims.generateFrameNumbers('player', { start: 6, end: 7 }),
+      frames: [
+        { key: 'player', frame: 6 * cols + char },
+        { key: 'player', frame: 7 * cols + char }
+      ],
       frameRate: 8,
       repeat: -1
     })
 
     // Skapa spelaren (skalad upp för mobilskärm)
-    this.player = this.add.sprite(195, 330, 'player', 0)
+    this.player = this.add.sprite(195, 330, 'player', 0 * cols + char)
     this.player.setScale(3) // Gör gubben större
+    this.cols = cols
+    this.char = char
     this.physics.add.existing(this.player)
     this.player.body.setCollideWorldBounds(true)
 
@@ -142,8 +163,8 @@ export class MainScene extends Phaser.Scene {
     } else {
       this.player.anims.stop()
       // Visa stillastående frame i rätt riktning
-      const frameMap = { down: 0, up: 2, left: 4, right: 6 }
-      this.player.setFrame(frameMap[this.lastDirection])
+      const rowMap = { down: 0, up: 2, left: 4, right: 6 }
+      this.player.setFrame(rowMap[this.lastDirection] * this.cols + this.char)
     }
   }
 }
