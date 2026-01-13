@@ -1,18 +1,18 @@
 # Help Skill
 
-Denna skill visar hjälp och tillgängliga kommandon för deltagarna.
+Denna skill visar hjälp och tips för deltagarna.
 
 ## Instruktioner
 
 När användaren kör `/help` eller frågar om hjälp, visa följande information på ett vänligt sätt:
 
-## Tillgängliga kommandon
+## Hur det fungerar
 
-| Kommando | Beskrivning |
-|----------|-------------|
-| `/start` | Starta utvecklingsservern för att testa lokalt |
-| `/release` | Publicera spelet till internet |
-| `/help` | Visa denna hjälp |
+Ditt spel uppdateras automatiskt! Varje gång Claude gör en ändring i koden pushas den direkt till servern och du kan se resultatet på:
+
+**https://game1.leasify.app**
+
+Du behöver bara ladda om sidan för att se ändringarna.
 
 ## Tips för att prata med Claude
 
@@ -31,4 +31,4 @@ När användaren kör `/help` eller frågar om hjälp, visa följande informatio
 
 ## Exempel på output
 
-Visa informationen ovan på ett tydligt och uppmuntrande sätt.
+Visa informationen ovan på ett tydligt och uppmuntrande sätt. Påminn om att spelet alltid finns på https://game1.leasify.app

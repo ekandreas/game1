@@ -10,7 +10,8 @@ När användaren kör `/idea` eller beskriver något de vill lägga till i spele
 2. **Föreslå lösning** - Beskriv kort hur det kan implementeras
 3. **Bekräfta** - Fråga om det låter bra innan du börjar koda
 4. **Implementera** - Gör ändringarna i koden
-5. **Testa** - Uppmana användaren att testa med `/start`
+5. **Pusha** - Committa och pusha till develop (sker automatiskt)
+6. **Berätta** - Förklara vad du gjort och att de kan ladda om sidan för att se ändringen
 
 ## Vanliga spelidéer att hjälpa med
 
