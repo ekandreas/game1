@@ -31,12 +31,13 @@ Jag är Claude, din AI-assistent, och jag ska hjälpa dig bygga ett eget spel id
 
 **Ditt spel finns på:** https://game1.leasify.app
 
-**Just nu har du ett enkelt startspel** med en lila fyrkant som du kan styra med piltangenterna (eller touch på mobilen). Vad vill du göra med den?
+**Just nu har du ett enkelt startspel** med en animerad pixel-gubbe som du kan styra med piltangenterna (eller touch på mobilen). Gubben går i alla riktningar och har en gå-animation!
 
 Några idéer att börja med:
-- "Gör fyrkanten till en gubbe istället"
 - "Lägg till fiender som jag ska undvika"
 - "Jag vill kunna samla poäng"
+- "Ändra utseendet på min gubbe"
+- "Lägg till en bakgrund"
 
 **Vad vill du bygga?**
 
@@ -92,6 +93,7 @@ game1/
 - Använd `this.add` för att skapa objekt
 - Använd `this.physics` för fysik och kollisioner
 - Spelyta: 390x660 pixlar (mobilanpassad portrait)
+- Sprite sheet finns i `public/assets/characters.png` (16x16 px, CC-BY Sharm/OpenGameArt)
 
 ## Vanliga uppgifter
 
