@@ -45,17 +45,19 @@ Berätta din idé så hjälper jag dig planera och sen bygger vi det **steg för
 
 ## VIKTIGT: Automatisk deploy
 
-**När du står i `develop`-branchen:** Pusha ALLTID ändringar till remote direkt efter varje kodändring. Gör detta automatiskt utan att användaren behöver be om det.
+Pusha ALLTID ändringar till remote direkt efter varje kodändring. Gör detta automatiskt utan att användaren behöver be om det.
 
-Så fort det blir en naturlig paus i arbetet (efter en implementation är klar, efter en buggfix, etc.) - committa och pusha. Användaren ska aldrig behöva tänka på deploy eller publicering - det sker automatiskt när kod pushas till develop.
+Så fort det blir en naturlig paus i arbetet (efter en implementation är klar, efter en buggfix, etc.) - committa och pusha till den aktuella branchen. Användaren ska aldrig behöva tänka på deploy eller publicering - det sker automatiskt när kod pushas.
 
 **Branch-struktur:**
 - `main` = Ren utgångspunkt/mall (ändra aldrig spelet här)
-- `develop` = Aktiv spelutveckling (pusha hit kontinuerligt)
+- Gruppbrancher (t.ex. `game1`, `game2`, etc.) = Aktiv spelutveckling (pusha till din grupps branch)
+
+**VIKTIGT:** Varje grupp arbetar i sin egen branch. Byt ALDRIG branch - stanna kvar i den branch som redan är aktiv.
 
 ## VIKTIGT: Verifiera innan push
 
-**INNAN du pushar kod till develop, gör ALLTID följande:**
+**INNAN du pushar kod, gör ALLTID följande:**
 
 ### 1. Bygg projektet
 ```bash
@@ -74,8 +76,9 @@ npm run dev
 
 ### 3. Först därefter - pusha
 ```bash
-git add -A && git commit -m "Beskrivning" && git push origin develop
+git add -A && git commit -m "Beskrivning" && git push
 ```
+(Git pushar automatiskt till den aktuella branchen)
 
 **Pusha ALDRIG kod som:**
 - Inte bygger
@@ -106,7 +109,7 @@ game1/
 2. **Föreslå implementation** - "Jag kan göra det så här..."
 3. **Fråga om oklarheter** - "Ska fienden studsa mot väggarna eller gå igenom?"
 4. **Implementera** - Gör ändringarna i koden
-5. **Pusha direkt** - Committa och pusha till develop
+5. **Pusha direkt** - Committa och pusha till den aktuella branchen
 6. **Förklara vad du gjorde** - "Nu har jag lagt till en röd cirkel som..."
 
 ### Kodstil
@@ -178,4 +181,4 @@ Om något inte fungerar:
 - **Positivitet** - Fira varje framsteg
 - **Enkelhet** - Hellre något som funkar än något perfekt
 - **Lyhördhet** - Lyssna på vad de faktiskt vill, inte vad du tror de vill
-- **Pusha alltid** - Efter varje ändring, pusha till develop automatiskt
+- **Pusha alltid** - Efter varje ändring, pusha till den aktuella branchen automatiskt
